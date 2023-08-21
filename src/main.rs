@@ -3,7 +3,8 @@ use std::{path::Path, time::Duration};
 use notify::{RecursiveMode, Watcher};
 use notify_debouncer_full::{new_debouncer, DebouncedEvent};
 
-fn main() {
+#[tokio::main]
+async fn main() {
     let (sender, receiver) = std::sync::mpsc::channel::<DebouncedEvent>();
     let debouncer = new_debouncer(Duration::from_secs(1), None, move |events| {
         println!("Debouncer: {:?}\n", events);
