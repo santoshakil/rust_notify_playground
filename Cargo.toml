@@ -1,0 +1,9 @@
+[package]
+name = "rust_notify_playground"
+version = "0.1.0"
+edition = "2021"
+
+
+[dependencies]
+notify = "6.0"
+notify-debouncer-full = "0.3"
